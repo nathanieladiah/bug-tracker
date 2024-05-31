@@ -13,6 +13,9 @@
     />
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css" />
+    <!-- DataTables -->
+    <link href="plugins/DataTables/datatables.min.css" rel="stylesheet" />
+
     <!-- Theme style -->
     <link rel="stylesheet" href="dist/css/adminlte.min.css" />
   </head>
@@ -283,6 +286,65 @@
         <div class="content">
           <div class="container-fluid">
             <!-- content rows here  -->
+            <div class="row">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h3 class="card-title">My Projects</h3>
+                  </div>
+                  <!-- / .card-header -->
+                  <div class="card-body">
+                    <table
+                      id="table"
+                      class="table table-bordered table-striped display"
+                    >
+                      <thead>
+                        <tr>
+                          <th>Project Name</th>
+                          <th>Description</th>
+                          <th>Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>FYP</td>
+                          <td>Mechanical Engineering Final Year Project</td>
+                          <td class="d-flex flex-column">
+                            <a href="#">Manage Users</a>
+                            <a href="#">Details</a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Testing</td>
+                          <td>Write some tests or something</td>
+                          <td class="d-flex flex-column">
+                            <a href="#">Manage Users</a>
+                            <a href="#">Details</a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Book</td>
+                          <td>Write a book sometime</td>
+                          <td class="d-flex flex-column">
+                            <a href="#">Manage Users</a>
+                            <a href="#">Details</a>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td>Bug Tracker</td>
+                          <td>Create a bug tracker web app.</td>
+                          <td class="d-flex flex-column">
+                            <a href="#">Manage Users</a>
+                            <a href="#">Details</a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <!-- /.container-fluid -->
         </div>
@@ -321,88 +383,20 @@
     <!-- Bootstrap 4 -->
     <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
     <!-- ChartJS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- <script src="plugins/chart.js/Chart.min.js"></script> -->
     <!-- <script src="plugins/chart/chart.js"></script> -->
+
     <!-- AdminLTE App -->
     <script src="dist/js/adminlte.min.js"></script>
 
+    <!-- DataTables & Plugins -->
+    <script src="plugins/DataTables/datatables.min.js"></script>
+
     <script>
-      const ctx = document.getElementById("statusChart");
-
-      new Chart(ctx, {
-        type: "bar",
-        data: {
-          labels: ["New", "Open", "In Progress", "Resolved"],
-          datasets: [
-            {
-              label: "# of Tickets",
-              data: [3, 3, 10, 5],
-              borderWidth: 1,
-            },
-          ],
-        },
-        options: {
-          scales: {
-            y: {
-              beginAtZero: true,
-            },
-          },
-        },
-      });
-
-      const priorityCtx = document.getElementById("priorityChart");
-
-      new Chart(priorityCtx, {
-        type: "bar",
-        data: {
-          labels: ["N/A", "Low", "Medium", "High"],
-          datasets: [
-            {
-              label: "# of Tickets",
-              data: [3, 3, 10, 5],
-              borderWidth: 1,
-            },
-          ],
-        },
-        options: {
-          scales: {
-            y: {
-              beginAtZero: true,
-            },
-          },
-        },
-      });
-
-      const typeCtx = document.getElementById("typeChart");
-
-      const typeData = {
-        labels: [
-          "Bugs/Errors",
-          "Feature Request",
-          "Training/Documentation Required",
-          "Other",
-        ],
-        datasets: [
-          {
-            label: "Tickets by Type",
-            data: [10, 12, 3, 6],
-            backgroundColor: [
-              "rgb(255, 99, 132)",
-              "rgb(54, 162, 235)",
-              "rgb(255, 205, 86)",
-              "rgb(16, 104, 200)",
-            ],
-            hoverOffset: 4,
-          },
-        ],
-      };
-
-      new Chart(typeCtx, {
-        type: "doughnut",
-        data: typeData,
+      $(document).ready(function () {
+        $("#table").DataTable();
       });
     </script>
   </body>
