@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Bug Tracker | Project #1</title>
+    <title>Bug Tracker | Edit Ticket</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link
@@ -13,8 +13,6 @@
     />
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css" />
-    <!-- DataTables -->
-    <link rel="stylesheet" href="plugins/DataTables/datatables.min.css" />
     <!-- Theme style -->
     <link rel="stylesheet" href="dist/css/adminlte.min.css" />
   </head>
@@ -184,13 +182,13 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="projects.html" class="nav-link active">
+                <a href="projects.html" class="nav-link">
                   <i class="nav-icon fa-solid fa-helmet-safety"></i>
                   <p>Projects</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="tickets.html" class="nav-link">
+                <a href="tickets.html" class="nav-link active">
                   <i class="nav-icon fa-solid fa-bug"></i>
                   <p>Tickets</p>
                 </a>
@@ -239,7 +237,7 @@
           <div class="container-fluid">
             <div class="row mb-2">
               <div class="col-sm-6">
-                <h1 class="m-0">Project #1</h1>
+                <h1 class="m-0">Edit Ticket</h1>
               </div>
               <!-- /.col -->
               <div class="col-sm-6">
@@ -248,9 +246,13 @@
                     <a href="dashboard.html">Home</a>
                   </li>
                   <li class="breadcrumb-item">
-                    <a href="projects.html">Projects</a>
+                    <a href="tickets.html">Ticket</a>
                   </li>
-                  <li class="breadcrumb-item active">Project #1</li>
+
+                  <li class="breadcrumb-item">
+                    <a href="ticket_detail.html">#1</a>
+                  </li>
+                  <li class="breadcrumb-item active">Edit</li>
                 </ol>
               </div>
               <!-- /.col -->
@@ -266,119 +268,108 @@
           <div class="container-fluid">
             <!-- content rows here  -->
             <div class="row">
-              <div class="col-12">
-                <div class="card">
+              <div class="col-md-10">
+                <div class="card card-primary">
                   <div class="card-header">
-                    <h3 class="card-title">Details for Project #1</h3>
+                    <h3 class="card-title">General</h3>
+
+                    <!-- <div class="card-tools">
+                      <button
+                        type="button"
+                        class="btn btn-tool"
+                        data-card-widget="collapse"
+                        title="Collapse"
+                      >
+                        <i class="fas fa-minus"></i>
+                      </button>
+                    </div> -->
                   </div>
                   <div class="card-body">
-                    <div class="d-flex justify-content-between">
-                      <div class="w-50 d-flex flex-column">
-                        <p>Project Name</p>
-                        <p>Project #1</p>
+                    <div class="row">
+                      <div class="col-md-5">
+                        <div class="form-group">
+                          <label for="exampleInputBorder">Title</label>
+                          <input
+                            type="text"
+                            class="form-control form-control-border"
+                            id="exampleInputBorder"
+                            placeholder="Enter title"
+                            value="Title"
+                          />
+                        </div>
+                        <div class="form-group">
+                          <label>Project</label>
+                          <select class="form-control">
+                            <option>N/A</option>
+                            <option>Admin</option>
+                            <option>Project Manager</option>
+                            <option>Developer</option>
+                            <option>Submitter</option>
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <label>Priority</label>
+                          <select class="form-control">
+                            <option>Low</option>
+                            <option>Medium</option>
+                            <option>High</option>
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <label>Type</label>
+                          <select class="form-control">
+                            <option>Bug/Error</option>
+                            <option>Feature Request</option>
+                            <option>Training/Documentation Required</option>
+                            <option>Other</option>
+                          </select>
+                        </div>
                       </div>
-                      <div class="w-50 d-flex flex-column">
-                        <p>Project Description</p>
-                        <p>
-                          This is a demo project to get the markup of the theme
-                          correct.
-                        </p>
+                      <div class="col-md-5 offset-md-2">
+                        <div class="form-group">
+                          <label for="exampleInputBorder">Description</label>
+                          <input
+                            type="text"
+                            class="form-control form-control-border"
+                            id="exampleInputBorder"
+                            placeholder="Enter description"
+                            value="This is the description"
+                          />
+                        </div>
+                        <div class="form-group">
+                          <label>Assigned Developer</label>
+                          <select class="form-control">
+                            <option>N/A</option>
+                            <option>Admin</option>
+                            <option>Project Manager</option>
+                            <option>Developer</option>
+                            <option>Submitter</option>
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <label>Status</label>
+                          <select class="form-control">
+                            <option>Low</option>
+                            <option>Medium</option>
+                            <option>High</option>
+                          </select>
+                        </div>
                       </div>
                     </div>
                   </div>
+                  <!-- /.card-body -->
                   <div class="card-footer">
-                    <a href="projects.html">Back to list</a>
-                    |
-                    <a href="edit_project.html">Edit</a>
+                    <a href="#" class="btn btn-secondary">Cancel</a>
+                    <input
+                      type="submit"
+                      value="Save Changes"
+                      class="btn btn-success float-right"
+                    />
                   </div>
                 </div>
+                <!-- /.card -->
               </div>
             </div>
-
-            <div class="row">
-              <div class="col-md-5">
-                <div class="card">
-                  <div class="card-header">
-                    <h3 class="card-title">Assigned Personnel</h3>
-                  </div>
-                  <div class="card-body">
-                    <table
-                      id="personnelTable"
-                      class="table table-bordered table-responsive display"
-                    >
-                      <thead>
-                        <tr>
-                          <th>Username</th>
-                          <th>Email</th>
-                          <th>Role</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>nathanieladiah</td>
-                          <td>nathanieladiah@gmail.com</td>
-                          <td>Admin</td>
-                        </tr>
-                        <tr>
-                          <td>jacobsteps</td>
-                          <td>jacobisdead@gmail.com</td>
-                          <td>Submitter</td>
-                        </tr>
-                        <tr>
-                          <td>MrRobot</td>
-                          <td>elliotalderson@gmail.com</td>
-                          <td>Developer</td>
-                        </tr>
-                        <tr>
-                          <td>girlwthTattoo</td>
-                          <td>lisbethsalander@gmail.com</td>
-                          <td>Project Manager</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-              <!-- / .col (LEFT) -->
-              <div class="col-md-7">
-                <div class="card">
-                  <div class="card-header">
-                    <h3 class="card-title">Tickets for this Project</h3>
-                  </div>
-                  <div class="card-body">
-                    <table
-                      id="ticketTable"
-                      class="table table-bordered table-responsive display"
-                    >
-                      <thead>
-                        <tr>
-                          <th>Title</th>
-                          <th>Submitter</th>
-                          <th>Developer</th>
-                          <th>Status</th>
-                          <th>Created</th>
-                          <th></th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>MC has no name</td>
-                          <td>Publisher Company</td>
-                          <td>MrRobot</td>
-                          <td>Open</td>
-                          <td>31/05/2021 5:52 pm</td>
-                          <td>
-                            <a href="ticket_details.html">More Details</a>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-              <!-- / .col (RIGHT) -->
-            </div>
-            <!-- / .row -->
           </div>
           <!-- /.container-fluid -->
         </div>
@@ -416,20 +407,8 @@
     <script src="plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
     <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- DataTables -->
-    <script src="plugins/DataTables/datatables.min.js"></script>
 
     <!-- AdminLTE App -->
     <script src="dist/js/adminlte.min.js"></script>
-
-    <script>
-      $(document).ready(function () {
-        $("#personnelTable").DataTable();
-      });
-
-      $(document).ready(function () {
-        $("#ticketTable").DataTable();
-      });
-    </script>
   </body>
 </html>
