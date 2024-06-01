@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Bug Tracker | Assign Roles</title>
+    <title>Bug Tracker | Project #1</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link
@@ -14,8 +14,7 @@
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css" />
     <!-- DataTables -->
-    <link href="plugins/DataTables/datatables.min.css" rel="stylesheet" />
-
+    <link rel="stylesheet" href="plugins/DataTables/datatables.min.css" />
     <!-- Theme style -->
     <link rel="stylesheet" href="dist/css/adminlte.min.css" />
   </head>
@@ -185,7 +184,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="projects.html" class="nav-link">
+                <a href="projects.html" class="nav-link active">
                   <i class="nav-icon fa-solid fa-helmet-safety"></i>
                   <p>Projects</p>
                 </a>
@@ -203,7 +202,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#!" class="nav-link active">
+                <a href="assign_roles.html" class="nav-link">
                   <i class="nav-icon fa-solid fa-list-check"></i>
                   <p>Assign Roles</p>
                 </a>
@@ -240,7 +239,7 @@
           <div class="container-fluid">
             <div class="row mb-2">
               <div class="col-sm-6">
-                <h1 class="m-0">Assign User Roles</h1>
+                <h1 class="m-0">Project #1</h1>
               </div>
               <!-- /.col -->
               <div class="col-sm-6">
@@ -248,7 +247,10 @@
                   <li class="breadcrumb-item">
                     <a href="dashboard.html">Home</a>
                   </li>
-                  <li class="breadcrumb-item active">Assign User Roles</li>
+                  <li class="breadcrumb-item">
+                    <a href="projects.html">Projects</a>
+                  </li>
+                  <li class="breadcrumb-item active">Project #1</li>
                 </ol>
               </div>
               <!-- /.col -->
@@ -264,52 +266,40 @@
           <div class="container-fluid">
             <!-- content rows here  -->
             <div class="row">
-              <div class="col-md-4">
-                <div class="card card-outline card-secondary">
-                  <div class="card-header">
-                    <h3 class="card-title">Select users and role</h3>
-                  </div>
-                  <form action="">
-                    <div class="card-body">
-                      <!-- Select multiple-->
-                      <div class="form-group">
-                        <label>Select 1 or more Users</label>
-                        <select multiple class="form-control">
-                          <option>Nathaniel Adiah</option>
-                          <option>Senior Dev</option>
-                          <option>Admin</option>
-                          <option>Project Manager</option>
-                          <option>John</option>
-                        </select>
-                      </div>
-                      <!-- select -->
-                      <div class="form-group">
-                        <label>Select the Role to assign</label>
-                        <select class="form-control">
-                          <option>N/A</option>
-                          <option>Admin</option>
-                          <option>Project Manager</option>
-                          <option>Developer</option>
-                          <option>Submitter</option>
-                        </select>
-                      </div>
-                      <button type="submit" class="btn btn-block btn-primary">
-                        Submit
-                      </button>
-                    </div>
-                  </form>
-                </div>
-              </div>
-              <div class="col-md-8">
+              <div class="col-12">
                 <div class="card">
                   <div class="card-header">
-                    <h3 class="card-title">Your Personnel</h3>
+                    <h3 class="card-title">Details for Project #1</h3>
                   </div>
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                      <div class="w-50 d-flex flex-column">
+                        <p>Project Name</p>
+                        <p>Project #1</p>
+                      </div>
+                      <div class="w-50 d-flex flex-column">
+                        <p>Project Description</p>
+                        <p>
+                          This is a demo project to get the markup of the theme
+                          correct.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
+            <div class="row">
+              <div class="col-md-5">
+                <div class="card">
+                  <div class="card-header">
+                    <h3 class="card-title">Assigned Personnel</h3>
+                  </div>
                   <div class="card-body">
                     <table
-                      id="table"
-                      class="table table-bordered table-striped display"
+                      id="personnelTable"
+                      class="table table-bordered table-responsive display"
                     >
                       <thead>
                         <tr>
@@ -344,7 +334,46 @@
                   </div>
                 </div>
               </div>
+              <!-- / .col (LEFT) -->
+              <div class="col-md-7">
+                <div class="card">
+                  <div class="card-header">
+                    <h3 class="card-title">Tickets for this Project</h3>
+                  </div>
+                  <div class="card-body">
+                    <table
+                      id="ticketTable"
+                      class="table table-bordered table-responsive display"
+                    >
+                      <thead>
+                        <tr>
+                          <th>Title</th>
+                          <th>Submitter</th>
+                          <th>Developer</th>
+                          <th>Status</th>
+                          <th>Created</th>
+                          <th></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>MC has no name</td>
+                          <td>Publisher Company</td>
+                          <td>MrRobot</td>
+                          <td>Open</td>
+                          <td>31/05/2021 5:52 pm</td>
+                          <td>
+                            <a href="#">More Details</a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <!-- / .col (RIGHT) -->
             </div>
+            <!-- / .row -->
           </div>
           <!-- /.container-fluid -->
         </div>
@@ -382,16 +411,19 @@
     <script src="plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
     <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- DataTables -->
+    <script src="plugins/DataTables/datatables.min.js"></script>
 
     <!-- AdminLTE App -->
     <script src="dist/js/adminlte.min.js"></script>
 
-    <!-- DataTables & Plugins -->
-    <script src="plugins/DataTables/datatables.min.js"></script>
-
     <script>
       $(document).ready(function () {
-        $("#table").DataTable();
+        $("#personnelTable").DataTable();
+      });
+
+      $(document).ready(function () {
+        $("#ticketTable").DataTable();
       });
     </script>
   </body>
