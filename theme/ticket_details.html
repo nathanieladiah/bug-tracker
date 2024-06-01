@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Bug Tracker | Tickets</title>
+    <title>Bug Tracker | Ticket #1</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link
@@ -14,8 +14,7 @@
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css" />
     <!-- DataTables -->
-    <link href="plugins/DataTables/datatables.min.css" rel="stylesheet" />
-
+    <link rel="stylesheet" href="plugins/DataTables/datatables.min.css" />
     <!-- Theme style -->
     <link rel="stylesheet" href="dist/css/adminlte.min.css" />
   </head>
@@ -128,7 +127,7 @@
         <a href="#!" class="brand-link">
           <img
             src="dist/img/logo.jpg"
-            alt="AdminLTE Logo"
+            alt="Bug Tracker Logo"
             class="brand-image img-circle elevation-3"
             style="opacity: 0.8"
           />
@@ -191,7 +190,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#!" class="nav-link active">
+                <a href="tickets.html" class="nav-link active">
                   <i class="nav-icon fa-solid fa-bug"></i>
                   <p>Tickets</p>
                 </a>
@@ -240,7 +239,7 @@
           <div class="container-fluid">
             <div class="row mb-2">
               <div class="col-sm-6">
-                <h1 class="m-0">Tickets</h1>
+                <h1 class="m-0">Ticket #1</h1>
               </div>
               <!-- /.col -->
               <div class="col-sm-6">
@@ -248,7 +247,10 @@
                   <li class="breadcrumb-item">
                     <a href="dashboard.html">Home</a>
                   </li>
-                  <li class="breadcrumb-item active">Tickets</li>
+                  <li class="breadcrumb-item">
+                    <a href="tickets.html">Tickets</a>
+                  </li>
+                  <li class="breadcrumb-item active">#1</li>
                 </ol>
               </div>
               <!-- /.col -->
@@ -264,49 +266,133 @@
           <div class="container-fluid">
             <!-- content rows here  -->
             <div class="row">
-              <div class="col-12">
+              <div class="col-md-6">
                 <div class="card">
                   <div class="card-header">
-                    <h3 class="card-title">My Tickets</h3>
+                    <h3 class="card-title">Details for Ticket #1</h3>
                   </div>
-                  <!-- / .card-header -->
+                  <div class="card-body">
+                    <div class="row post">
+                      <div class="col-md-6">
+                        <p class="h5">Ticket Title</p>
+                        <p>Great Work</p>
+                      </div>
+                      <div class="col-md-6">
+                        <p class="h5">Description</p>
+                        <p>
+                          Keep on plugging in the code, you're getting there
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row post">
+                      <div class="col-md-6">
+                        <p class="h5">Assigned Developer</p>
+                        <p>MrRobot</p>
+                      </div>
+                      <div class="col-md-6">
+                        <p class="h5">Submitter</p>
+                        <p>John Connor</p>
+                      </div>
+                    </div>
+                    <div class="row post">
+                      <div class="col-md-6">
+                        <p class="h5">Project</p>
+                        <p>Skynet</p>
+                      </div>
+                      <div class="col-md-6">
+                        <p class="h5">Ticket Priority</p>
+                        <p>Low</p>
+                      </div>
+                    </div>
+                    <div class="row post">
+                      <div class="col-md-6">
+                        <p class="h5">Ticket Status</p>
+                        <p>Open</p>
+                      </div>
+                      <div class="col-md-6">
+                        <p class="h5">Ticket Type</p>
+                        <p>Bugs/Errors</p>
+                      </div>
+                    </div>
+                    <div class="row post">
+                      <div class="col-md-6">
+                        <p class="h5">Created</p>
+                        <p>04/08/1997 12:00:01</p>
+                      </div>
+                      <div class="col-md-6">
+                        <p class="h5">Updated</p>
+                        <p>29/08/1997 02:14:00</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-footer">
+                    <a href="projects.html">Back to list</a>
+                    |
+                    <a href="#">Edit</a>
+                  </div>
+                </div>
+
+                <div class="card mt-5">
+                  <div class="card-header">
+                    <h3 class="card-title">Ticket History</h3>
+                  </div>
                   <div class="card-body">
                     <table
-                      id="table"
-                      class="table table-bordered table-striped display"
+                      id="historyTable"
+                      class="table table-bordered display"
                     >
                       <thead>
                         <tr>
-                          <th>Title</th>
-                          <th>Project</th>
-                          <th>Developer Assigned</th>
-                          <th>Priority</th>
-                          <th>Status</th>
-                          <th>Type</th>
-                          <th>Created</th>
-                          <th>Actions</th>
+                          <th>Property</th>
+                          <th>Old Value</th>
+                          <th>New Value</th>
+                          <th>Date Changed</th>
                         </tr>
                       </thead>
-                      <tbody>
-                        <tr>
-                          <td>MC has no name</td>
-                          <td>Book</td>
-                          <td>Nathaniel Adiah</td>
-                          <td>Medium</td>
-                          <td>Open</td>
-                          <td>Feature Request</td>
-                          <td>31/05/2021 5:52 pm</td>
-                          <td class="d-flex flex-column">
-                            <a href="#">Edit/Assign</a>
-                            <a href="ticket_details.html">Details</a>
-                          </td>
-                        </tr>
-                      </tbody>
+                      <tbody></tbody>
                     </table>
                   </div>
                 </div>
               </div>
+              <!-- / .col (LEFT) -->
+              <div class="col-md-6">
+                <!-- <p>Small <code>.input-group.input-group-sm</code></p> -->
+                <form action="">
+                  <p class="h6">Add a comment?</p>
+                  <div class="input-group">
+                    <input type="text" class="form-control" />
+                    <span class="input-group-append">
+                      <button type="button" class="btn btn-info btn-flat">
+                        Add
+                      </button>
+                    </span>
+                  </div>
+                </form>
+
+                <div class="card mt-5">
+                  <div class="card-header">
+                    <h3 class="card-title">Ticket Comments</h3>
+                  </div>
+                  <div class="card-body">
+                    <table
+                      id="commentTable"
+                      class="table table-bordered display"
+                    >
+                      <thead>
+                        <tr>
+                          <th>Commenter</th>
+                          <th>Message</th>
+                          <th>Created</th>
+                        </tr>
+                      </thead>
+                      <tbody></tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <!-- / .col (RIGHT) -->
             </div>
+            <!-- / .row -->
           </div>
           <!-- /.container-fluid -->
         </div>
@@ -344,21 +430,19 @@
     <script src="plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
     <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- ChartJS -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- <script src="plugins/chart.js/Chart.min.js"></script> -->
-    <!-- <script src="plugins/chart/chart.js"></script> -->
+    <!-- DataTables -->
+    <script src="plugins/DataTables/datatables.min.js"></script>
 
     <!-- AdminLTE App -->
     <script src="dist/js/adminlte.min.js"></script>
 
-    <!-- DataTables & Plugins -->
-    <script src="plugins/DataTables/datatables.min.js"></script>
-
     <script>
       $(document).ready(function () {
-        $("#table").DataTable();
+        $("#commentTable").DataTable();
+      });
+
+      $(document).ready(function () {
+        $("#historyTable").DataTable();
       });
     </script>
   </body>
