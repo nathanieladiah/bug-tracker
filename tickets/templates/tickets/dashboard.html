@@ -1,0 +1,267 @@
+{% extends "tickets/base.html" %}
+
+{% block title %}Dashboard{% endblock title %}
+
+{% block pagecrumbs %}
+<li class="breadcrumb-item active">Home</li>
+{% endblock pagecrumbs %}
+
+{% block content %}
+<!-- Info boxes -->
+ <div class="row">
+	<div class="class-12 col-sm-5 col-md-3">
+		<div class="info-box">
+			<span class="info-box-icon bg-primary elevation-1">
+				<i class="fa-solid fa-clipboard-check"></i>
+			</span>
+
+			<div class="info-box-content">
+				<span class="info-box-text">Total Issues</span>
+				<span class="info-box-number"> 10 </span>
+			</div>
+		</div>
+	</div>
+
+  <div class="col-12 col-sm-5 col-md-3">
+    <div class="info-box">
+      <span class="info-box-icon bg-warning elevation-1">
+        <i class="fa-solid fa-battery-quarter"></i>
+      </span>
+
+      <div class="info-box-content">
+        <span class="info-box-text">In Progress</span>
+        <span class="info-box-number"> 10 </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="clearfix hidden-md-up"></div>
+
+  <div class="col-12 col-sm-5 col-md-3">
+    <div class="info-box">
+      <span class="info-box-icon bg-success elevation-1">
+        <i class="fa-solid fa-battery-full"></i>
+      </span>
+
+      <div class="info-box-content">
+        <span class="info-box-text">Completed</span>
+        <span class="info-box-number"> 5 </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12 col-sm-5 col-md-3">
+    <div class="info-box">
+      <span class="info-box-icon bg-info elevation-1">
+        <i class="fa-solid fa-circle-exclamation"></i>
+      </span>
+
+      <div class="info-box-content">
+        <span class="info-box-text">New</span>
+        <span class="info-box-number"> 3 </span>
+      </div>
+    </div>
+  </div>
+ </div>
+ <!-- /.row -->
+
+ <!-- Charts -->
+  <div class="row">
+    <div class="col-md-6">
+      <!-- Bar Chart -->
+       <div class="card card-success">
+        <div class="card-header">
+          <h3 class="card-title">Ticket by Status</h3>
+
+          <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+              <i class="fas fa-minus"></i>
+            </button>
+            <button type="button" class="btn btn-tool" data-card-widget="remove">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="card-body">
+          <div class="chart">
+            <canvas
+              id="statusChart"
+              style="
+                min-height: 250px;
+                height: 250px;
+                max-height: 250px;
+                max-width: 100%;
+              "
+            ></canvas>
+          </div>
+        </div>
+        <!-- / .card-body -->
+       </div>
+      <!-- / .card -->
+
+      <!-- Bar Chart -->
+       <div class="card card-success">
+        <div class="card-header">
+          <h3 class="card-title">Tickets by Priority</h3>
+
+          <div class="card-tools">
+            <button
+              type="button"
+              class="btn btn-tool"
+              data-card-widget="collapse"
+            >
+              <i class="fas fa-minus"></i>
+            </button>
+            <button
+              type="button"
+              class="btn btn-tool"
+              data-card-widget="remove"
+            >
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="card-body">
+          <div class="chart">
+            <canvas
+              id="priorityChart"
+              style="
+                min-height: 250px;
+                height: 250px;
+                max-height: 250px;
+                max-width: 100%;
+              "
+            ></canvas>
+          </div>
+        </div>
+       </div>
+      <!-- / .card -->
+    </div>
+    <!-- / .col (LEFT) -->
+
+    <div class="col-md-6">
+      <!-- DONUT CHART -->
+      <div class="card card-danger">
+        <div class="card-header">
+          <h3 class="card-title">Tickets by Type</h3>
+
+          <div class="card-tools">
+            <button
+              type="button"
+              class="btn btn-tool"
+              data-card-widget="collapse"
+            >
+              <i class="fas fa-minus"></i>
+            </button>
+            <button
+              type="button"
+              class="btn btn-tool"
+              data-card-widget="remove"
+            >
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="card-body">
+          <canvas
+            id="typeChart"
+            style="
+              min-height: 250px;
+              height: 250px;
+              max-height: 250px;
+              max-width: 100%;
+            "
+          ></canvas>
+        </div>
+      </div>
+      <!-- / .card -->
+    </div>
+    <!-- / .col (RIGHT) -->
+  </div>
+ <!-- / .row -->
+{% endblock content %}
+
+
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+  const ctx = document.getElementById("statusChart");
+
+  new Chart(ctx, {
+    type: "bar",
+    data: {
+      labels: ["New", "Open", "In Progress", "Resolved"],
+      datasets: [
+        {
+          label: "# of Tickets",
+          data: [3, 3, 10, 5],
+          borderWidth: 1,
+        },
+      ],
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
+        },
+      },
+    },
+  });
+
+  const priorityCtx = document.getElementById("priorityChart");
+
+  new Chart(priorityCtx, {
+    type: "bar",
+    data: {
+      labels: ["N/A", "Low", "Medium", "High"],
+      datasets: [
+        {
+          label: "# of Tickets",
+          data: [3, 3, 10, 5],
+          borderWidth: 1,
+        },
+      ],
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
+        },
+      },
+    },
+  });
+
+  const typeCtx = document.getElementById("typeChart");
+
+  const typeData = {
+    labels: [
+      "Bugs/Errors",
+      "Feature Request",
+      "Training/Documentation Required",
+      "Other",
+    ],
+    datasets: [
+      {
+        label: "Tickets by Type",
+        data: [10, 12, 3, 6],
+        backgroundColor: [
+          "rgb(255, 99, 132)",
+          "rgb(54, 162, 235)",
+          "rgb(255, 205, 86)",
+          "rgb(16, 104, 200)",
+        ],
+        hoverOffset: 4,
+      },
+    ],
+  };
+
+  new Chart(typeCtx, {
+    type: "doughnut",
+    data: typeData,
+  });
+</script>
+{% endblock %}
