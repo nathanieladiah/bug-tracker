@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bug Tracker | {% block title %}Registration Page{% endblock %}</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback"
+    />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/all.min.css' %}" />
+    <!-- icheck bootstrap -->
+    <link
+      rel="stylesheet"
+      href="{% static 'plugins/icheck-bootstrap/icheck-bootstrap.min.css' %}"
+    />
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{% static 'dist/css/adminlte.min.css' %}" />
+  </head>
+  <body class="hold-transition register-page">
+    <div class="register-box">
+      <div
+        class="register-logo d-flex align-items-center justify-content-center"
+      >
+        <img
+          src="dist/img/logo.jpg"
+          alt=""
+          class="brand-image img-circle elevation-3 mr-2"
+          width="50"
+          height="50"
+        />
+        <a href="#"><b>Bug</b>Tracker</a>
+      </div>
+
+      <div class="card">
+       {% block content %} {% endblock %}
+      </div>
+      <!-- /.card -->
+    </div>
+    <!-- /.register-box -->
+
+    <!-- jQuery -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="dist/js/adminlte.min.js"></script>
+  </body>
+</html>
