@@ -1,0 +1,63 @@
+{% extends "tickets/base.html" %}
+{% load static %}
+
+{% block title %}Projects{% endblock title %}
+
+{% block page_styles %}
+<link rel="stylesheet" href="{% static 'plugins/DataTables/datatables.min.css' %}">
+{% endblock page_styles %}
+
+{% block pagecrumbs %}
+<li class="breadcrumb-item">
+	<a href="{% url 'dashboard' %}">Home</a>
+</li>
+<li class="breadcrumb-item active">Projects</li>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+	<div class="col-12">
+    <a href="#" class="btn btn-success mb-3">Add new project</a>
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">My Projects</h3>
+      </div>
+      <div class="card-body">
+        <table id="table" class="table table-bordered table-striped display">
+          <thead>
+            <tr>
+              <th>Project Name</th>
+              <th>Description</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for project in project_list %}
+            <tr>
+              <td>{{project.title}}</td>
+              <td>{{project.description}}</td>
+              <td class="d-flex flex-column">
+                <a href="#">Manage Users</a>
+                <a href="{% url 'project_detail' project.id %}">Details</a>
+              </td>
+            </tr>
+            {% endfor%}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}
+
+
+{% block scripts %}
+<!-- DataTables & Plugins -->
+<script src="{% static 'plugins/DataTables/datatables.min.js' %}"></script>
+
+<script>
+  $(document).ready(function() {
+    $('#table').DataTable();
+  });
+</script>
+{% endblock scripts %}

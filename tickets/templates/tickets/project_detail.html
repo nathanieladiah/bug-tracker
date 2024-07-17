@@ -1,0 +1,138 @@
+{% extends "tickets/base.html" %}
+{% load static %}
+
+{% block title %}{{project.title}}{% endblock title %}
+
+{% block page_styles %}
+<link rel="stylesheet" href="{% static 'plugins/DataTables/datatables.min.css' %}">
+{% endblock page_styles %}
+
+{% block pagecrumbs %}
+<li class="breadcrumb-item">
+	<a href="{% url 'dashboard' %}">Home</a>
+</li>
+<li class="breadcrumb-item">
+	<a href="{% url 'projects' %}">Projects</a>
+</li>
+<li class="breadcrumb-item active">{{project.title}}</li>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+	<div class="col-12">
+		<div class="card">
+			<div class="card-header">
+				<h3 class="card-title">Details for {{project.title}}</h3>
+			</div>
+			<div class="card-body">
+				<div class="d-flex justify-content-between">
+					<div class="w-50 d-flex flex-column">
+						<p>Project Name</p>
+						<p>{{project.title}}</p>
+					</div>
+					<div class="w-50 d-flex flex-column">
+						<p>Project Description</p>
+						<p>{{project.description}}</p>
+					</div>
+				</div>
+			</div>
+      <div class="card-footer">
+        <a href="{% url 'projects' %}">Back to list</a>
+        <a href="#">Edit</a>
+      </div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+  <div class="col-md-5">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Assigned Personnel</h3>
+      </div>
+      <div class="card-body">
+        <table id="personnelTable" class="table table-bordered table-responsive display">
+          <thead>
+            <tr>
+              <th>Username</th>
+              <th>Email</th>
+              <th>Role</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>nathanieladiah</td>
+              <td>nathanieladiah@gmail.com</td>
+              <td>Admin</td>
+            </tr>
+            <tr>
+              <td>jacobsteps</td>
+              <td>jacobisdead@gmail.com</td>
+              <td>Submitter</td>
+            </tr>
+            <tr>
+              <td>MrRobot</td>
+              <td>elliotalderson@gmail.com</td>
+              <td>Developer</td>
+            </tr>
+            <tr>
+              <td>girlwthTattoo</td>
+              <td>lisbethsalander@gmail.com</td>
+              <td>Project Manager</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!-- / .col (LEFT) -->
+   <div class="col-md-7">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Tickets for this Project</h3>
+      </div>
+      <div class="card-body">
+        <table id="ticketTable" class="table table-bordered table-responsive display">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Submitter</th>
+              <th>Developer</th>
+              <th>statusChart</th>
+              <th>Created</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>MC has no name</td>
+              <td>Publisher Company</td>
+              <td>MrRobot</td>
+              <td>Open</td>
+              <td>31/05/2021 5:52 pm</td>
+              <td>
+                <a href="#">More Details</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+   </div>
+</div>
+{% endblock content %}
+
+
+{% block scripts %}
+<script src="{% static 'plugins/DataTables/datatables.min.js' %}"></script>
+
+<script>
+	$(document).ready(function() {
+		$('#personnelTable').DataTable();
+	});
+
+	$(document).ready(function() {
+		$('#ticketTable').DataTable();
+	})
+</script>
+{% endblock scripts %}
